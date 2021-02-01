@@ -19,7 +19,7 @@ sudo gem install one_gadget
 ## pwngdb
 cd ~/
 git clone https://github.com/scwuaptx/Pwngdb.git
-echo ~/Pwngdb/.gdbinit >>  ~/.gdbinit
+cat ~/Pwngdb/.gdbinit >>  ~/.gdbinit
 
 ## libc version
 git clone git@github.com:matrix1001/glibc-all-in-one.git ~/glibc-all-in-one
