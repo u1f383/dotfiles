@@ -1,0 +1,20 @@
+[legacy/keybindings]
+zoom-in='<Primary>equal'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(46,52,54)'
+background-transparency-percent=12
+bold-is-bright=false
+cell-height-scale=1.05
+cell-width-scale=1.0
+cursor-blink-mode='system'
+cursor-shape='ibeam'
+font='Monospace 14'
+foreground-color='rgb(211,215,207)'
+palette=['rgb(16,66,78)', 'rgb(220,50,47)', 'rgb(0,153,88)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(153,196,207)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+use-custom-command=false
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=true
+visible-name='u1f383'
