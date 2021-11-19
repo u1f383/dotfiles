@@ -1,5 +1,4 @@
 #!/bin/bash
-
 sudo apt install -yq gcc
 sudo apt install -yq gdb
 
@@ -20,6 +19,3 @@ sudo gem install one_gadget
 cd ~/
 git clone https://github.com/scwuaptx/Pwngdb.git
 cat ~/Pwngdb/.gdbinit >>  ~/.gdbinit
-
-## libc version
-git clone git@github.com:matrix1001/glibc-all-in-one.git ~/glibc-all-in-one
