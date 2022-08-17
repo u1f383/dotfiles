@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run -d \
+           --name u22\
+           --security-opt seccomp=unconfined \
+           --net=host \
+           -e "TERM=xterm-256color" \
+           --cap-add=SYS_PTRACE \
+           --volume /Users/u1f383/docker_shard_folder/f:/docker_vol\
+           -it ubuntu:22.04 bash -l
