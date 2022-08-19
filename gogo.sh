@@ -1,22 +1,26 @@
 #!/bin/bash
 
+set -e
+
 ############### BASIC ###############
 sudo apt update
-sudo apt install -yq vim && \
-                     file && \
-                     curl && \
-                     gcc && \
-                     gdb && \
-                     git && \
-                     ruby-dev && \
-                     fish && \
-                     glibc-source && \
-                     make && \
-                     gawk && \
-                     bison && \
-                     libseccomp-dev && \
-                     tmux && \
-                     wget && \
+sudo apt install -yq vim \
+                     python3 \
+                     python3-pip \
+                     file \
+                     curl \
+                     gcc \
+                     gdb \
+                     git \
+                     ruby-dev \
+                     fish \
+                     glibc-source \
+                     make \
+                     gawk \
+                     bison \
+                     libseccomp-dev \
+                     tmux \
+                     wget \
                      locales
 locale-gen en_US.UTF-8
 
@@ -26,7 +30,7 @@ bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 pip3 install pwntools==4.4.0
 
 sudo apt install -yq ruby-dev
-sudo gem install -yq seccomp-tools && \
+sudo gem install -yq seccomp-tools \
                      one_gadget
 ln -s /usr/local/lib/python3.8/dist-packages/bin/ROPgadget /bin/ROPgadget
 cat config/.gdbinit >> ~/.gdbinit
@@ -34,9 +38,9 @@ cp gdb-cmd.py ~/
 
 ############### TMUX ###############
 
-sudo apt -yq install tmux && \
-                     powerline && \
-                     fonts-powerline && \
+sudo apt -yq install tmux \
+                     powerline \
+                     fonts-powerline \
                      ttf-ancient-fonts
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # install tpm (Tmux Plugin Manager)
@@ -47,7 +51,8 @@ cp config/.tmux.conf ~/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp config/.vimrc ~/
-vim -es -u vimrc -i NONE -c "PlugInstall" -c "qa"
+pip3 install --user powerline-status
+vim -E -s -u "$HOME/.vimrc" -i NONE -c "PlugInstall" -c "qa"
 
 ############### ZSH ###############
 

@@ -8,8 +8,8 @@ set softtabstop=4
 set shiftwidth=4
 set laststatus=2
 set t_Co=256
-" pip install --user git+git://github.com/powerline/powerline
-set rtp+=/Users/u1f383/Library/Python/3.9/lib/python/site-packages/powerline/bindings/vim
+" set rtp+=/usr/lib/python3/dist-packages/powerline/bindings/vim
+" set rtp+=/Users/u1f383/Library/Python/3.9/lib/python/site-packages/powerline/bindings/vim
 set showtabline=2
 set mouse=r
 
