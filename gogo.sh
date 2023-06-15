@@ -5,6 +5,7 @@ set -e
 ############### BASIC ###############
 sudo apt update
 sudo apt install -yq vim \
+                     nvim \
                      python3 \
                      python3-pip \
                      file \
@@ -22,16 +23,18 @@ sudo apt install -yq vim \
                      tmux \
                      wget \
                      locales
-locale-gen en_US.UTF-8
+sudo locale-gen en_US.UTF-8
 
 ############### PWN ###############
 
-bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
+git clone https://github.com/pwndbg/pwndbg ~
+cd ~/pwndbg
+./setup.sh
 pip3 install pwntools==4.4.0
 
 sudo apt install -yq ruby-dev
-sudo gem install -yq seccomp-tools \
-                     one_gadget
+sudo gem install seccomp-tools \
+                 one_gadget
 ln -s /usr/local/lib/python3.8/dist-packages/bin/ROPgadget /bin/ROPgadget
 cat config/.gdbinit >> ~/.gdbinit
 cp gdb-cmd.py ~/
@@ -51,8 +54,8 @@ cp config/.tmux.conf ~/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp config/.vimrc ~/
-pip3 install --user powerline-status
-vim -E -s -u "$HOME/.vimrc" -i NONE -c "PlugInstall" -c "qa"
+cp -r .config/nvim/ ~/.config
+nvim -E -s -u "$HOME/.vimrc" -i NONE -c "PlugInstall" -c "qa"
 
 ############### ZSH ###############
 
@@ -63,3 +66,4 @@ mkdir -p $HOME/.oh-my-zsh/custom/themes/
 
 cp config/bullet-train.zsh-theme $HOME/.oh-my-zsh/custom/themes/
 cp config/.zshrc ~/.zshrc
+
